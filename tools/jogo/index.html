@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="intro" >
+        <p> <b>Holdor</b>: Olá, seja bem vindo, nobre guerreiro a Kathelda, aqui viveremos grandes aventuras</p>
+        <p>para iniciarmos, pode me informa seu nome, nobre forasteiro?</p>
+        <input type="text" id="player_name">
+        <button onclick="infoNamePlayer()"> Esse é meu nome </button>
+    </div>
+
+    <div id="intro-step2" style="display: none;">
+        <p> <b>Holdor</b>: é um prazer te conheçer  <b id="char_name"></b> </p>
+        <button onclick="chooseClassPlayer()"> O prazer é todo meu :D</button>
+
+    </div>
+
+    <div id="choose_class" style="display: none;">
+        <p> <b>Holdor</b>: Meu amigo <b id="name"></b> você deve escolher uma classe, onde você suará de suas habilidades para enfrentar seus inimigos <b id="char_name"></b> </p>
+        <button onclick="chossedClass('wizzard_choosed')"> Quero ser um Mago</button>
+        <button onclick="chossedClass('ladin_chooses')"> Quero Ser um Ladino</button>
+        <button onclick="chossedClass('warior_choosed')"> Quero ser um Guerreiro</button>
+
+    </div>
+
+    <div id="wizzard_choosed" style="display: none;">
+        <p> <b>Holdor</b>: Parabéns <b id="person_name"></b> você escolheu ser um Mago, veja abaixo seus pontos </p>
+       
+
+    </div>
+
+    <div id="ladin_chooses" style="display: none;">
+        <p> <b>Holdor</b>: Parabéns <b id="person_name"></b> você escolheu ser um Ladino, veja abaixo seus pontos </p>
+    </div>
+
+    <div id="warior_choosed" style="display: none;">
+        <p> <b>Holdor</b>: Parabéns <b id="person_name"></b> você escolheu ser um Guerreiro, veja abaixo seus pontos </p>
+
+    </div>
+
+    <script>
+
+        function setPlayerName() {
+            var player_name =  document.querySelector('#player_name').value
+            localStorage.setItem('player_name', player_name);
+        }
+
+        function getPlayerName() {
+            return player_name_rec = localStorage.getItem('player_name');
+        }
+
+        function disableScene(selector) {
+            document.getElementById(selector).style.display = 'none'
+        }
+
+        function enableScene(selector) {
+            document.getElementById(selector).style.display = 'block'
+        }
+
+        function setNamePlayerOnField(field) {
+            document.getElementById(field).textContent = getPlayerName()
+        }
+
+        function infoNamePlayer() {
+            setPlayerName()
+            disableScene('intro')
+            enableScene('intro-step2')
+            setNamePlayerOnField('char_name')
+        }
+
+        function chooseClassPlayer() {
+            disableScene('intro-step2')
+            enableScene('choose_class')
+            setNamePlayerOnField('name')
+        }
+
+        function chossedClass(classe) {
+            disableScene('choose_class')
+            enableScene(classe)
+            setNamePlayerOnField('person_name')
+        }
+    </script>
+</body>
+</html>
