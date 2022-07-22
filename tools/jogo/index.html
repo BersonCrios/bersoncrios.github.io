@@ -10,27 +10,115 @@
     <div id="intro" >
         <p> <b>Holdor</b>: Olá, seja bem vindo, nobre guerreiro a Kathelda, aqui viveremos grandes aventuras</p>
         <p>para iniciarmos, pode me informa seu nome, nobre forasteiro?</p>
-        <input type="text" id="player_name">
-        <button onclick="infoNamePlayer()"> Esse é meu nome </button>
+        <div class="input-group">
+            <input type="text" class="form-control" id="player_name" placeholder="Digite seu nome de usuário" aria-label="Recipient's username with two button addons">
+            <button class="btn btn-outline-primary" onclick="infoNamePlayer()" type="button"> Esse é meu nome</button>
+          </div>
+        <!-- <input type="text" id="player_name">
+        <button class="btn btn-primary" onclick="infoNamePlayer()"> Esse é meu nome </button> -->
     </div>
 
     <div id="intro-step2" style="display: none;">
         <p> <b>Holdor</b>: é um prazer te conheçer  <b id="char_name"></b> </p>
-        <button onclick="chooseClassPlayer()"> O prazer é todo meu :D</button>
+        <button class="btn btn-primary" onclick="chooseClassPlayer()"> O prazer é todo meu :D</button>
 
     </div>
 
     <div id="choose_class" style="display: none;">
         <p> <b>Holdor</b>: Meu amigo <b id="name"></b> você deve escolher uma classe, onde você suará de suas habilidades para enfrentar seus inimigos <b id="char_name"></b> </p>
-        <button onclick="chossedClass('wizzard_choosed')"> Quero ser um Mago</button>
-        <button onclick="chossedClass('ladin_chooses')"> Quero Ser um Ladino</button>
-        <button onclick="chossedClass('warior_choosed')"> Quero ser um Guerreiro</button>
+       
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                 Mago
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Pontos de Vida</th>
+                            <th scope="col">Força</th>
+                            <th scope="col">Mana</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>2000</td>
+                            <td>550</td>
+                            <td>1800</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <button class="btn btn-primary" onclick="chossedClass('wizzard_choosed')"> Quero ser um Mago</button>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Ladino
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Pontos de Vida</th>
+                            <th scope="col">Força</th>
+                            <th scope="col">Mana</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1750</td>
+                            <td>1500</td>
+                            <td>550</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <button class="btn btn-primary" onclick="chossedClass('ladin_chooses')"> Quero Ser um Ladino</button>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Guerreiro
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Pontos de Vida</th>
+                            <th scope="col">Força</th>
+                            <th scope="col">Mana</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>2500</td>
+                            <td>2000</td>
+                            <td>0</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <button class="btn btn-primary" onclick="chossedClass('warior_choosed')"> Quero ser um Guerreiro</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
     </div>
 
     <div id="wizzard_choosed" style="display: none;">
-        <p> <b>Holdor</b>: Parabéns <b id="person_name"></b> você escolheu ser um Mago, veja abaixo seus pontos </p>
-       
+        <p> <b>Holdor</b>: Parabéns <b id="person_name"></b> você escolheu ser um Mago, veja abaixo seus pontos </p> 
+
 
     </div>
 
@@ -43,8 +131,10 @@
 
     </div>
 
-    <script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
+    <script>
         function setPlayerName() {
             var player_name =  document.querySelector('#player_name').value
             localStorage.setItem('player_name', player_name);
