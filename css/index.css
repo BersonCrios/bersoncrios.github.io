@@ -1,0 +1,19 @@
+/* class */
+.menu_body{
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    background-color: #007FFF;
+}
+
+  .copy {
+    text-align: center;
+    color: #fff;
+  }
+
+  /* elements */
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
