@@ -1,1 +1,1 @@
-# Welcome to my personal site specs
+# Welcome to my personal site
