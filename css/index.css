@@ -37,6 +37,45 @@
     color: #FFFFFF;
   }
 
+.photo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 10%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.job{  
+    position: relative;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    
+    align-items: center;
+    text-align: center;
+    
+    color: #FFFFFF;
+}
+
+.name {
+    position: relative;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 49px;
+    
+    align-items: center;
+    text-align: center;
+    
+    color: #FFFFFF; 
+}
+  
   /* elements */
   footer {
     position: absolute;
@@ -74,6 +113,17 @@
     .item{
         font-size: 1rem;
       }
+
+      .photo {
+        display: none;
+    }
+    .job{
+        display: none;
+    }
+
+    .name {
+        display: none;
+    }
   }
 
   @media (min-width: 546px) {
