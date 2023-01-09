@@ -6,6 +6,15 @@
     background-color: #007FFF;
 }
 
+.site_body{
+  position: absolute;
+  height: 100%;
+  width: 70%;
+  background-color: #fff;
+  margin-left: 30%;
+}
+
+
 .copy {
     position: relative;
     font-style: normal;
@@ -76,6 +85,20 @@
     color: #FFFFFF; 
 }
   
+.page_title{
+  position: relative;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 6rem;
+  line-height: 49px;
+
+  align-items: center;
+  text-align: center;
+
+  padding: 5%;
+
+  color: #007FFF;
+}
   /* elements */
   footer {
     position: absolute;
@@ -95,6 +118,10 @@
   @media (max-width: 545px) {
     .menu_body{
         width: 20%;
+    }
+    .site_body{
+      width: 80%;
+      margin-left: 20%;
     }
 
     .copy {
