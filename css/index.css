@@ -113,6 +113,14 @@
   text-decoration: none;
   color: #1AFFD5;
 }
+
+.contact-icon {
+  font-size: 5rem;
+}
+
+.contact {
+  font-size: 2rem;
+}
   /* elements */
   footer {
     position: absolute;
@@ -164,6 +172,14 @@
 
     .name {
         display: none;
+    }
+
+    .contact-icon {
+      font-size: 3rem;
+    }
+    
+    .contact {
+      font-size: 1rem;
     }
   }
 
